@@ -1,4 +1,4 @@
-import { ReactComponent as YourSvg } from './builderscrack-logo.svg';
+import logo from './image/builderscrack-logo.svg';
 
 function App() {
   return (
@@ -6,7 +6,7 @@ function App() {
       <header className="App-header">
       </header>
       <div className="flex top-0 right-0 left-0 fixed bg-gray-100 space-x-4">
-        <YourSvg className="p-1"/>
+        <img src={logo} className="p-1"/>
         <div>Button 1</div>
         <div>Button 2</div>
         <div>Button 3</div>
