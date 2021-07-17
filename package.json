@@ -15,10 +15,17 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "webpack serve --config ./webpack.config.js --mode development --hot",
+    "start": "webpack serve --config ./webpack.config.js --mode development --hot --open",
     "build": "export NODE_ENV=production && webpack",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pre-commit": "lint-staged",
+    "lint": "eslint .", // lint the codebase
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix", // try to fix whatever it can fix
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -47,9 +54,13 @@
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.0.0",
+    "eslint": "^7.30.0",
+    "eslint-plugin-react": "^7.24.0",
+    "lint-staged": "^11.0.1",
     "postcss": "^7.0.36",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.3.2",
     "style-loader": "^3.1.0",
     "svg-url-loader": "^7.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
